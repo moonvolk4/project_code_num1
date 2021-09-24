@@ -1,0 +1,26 @@
+import math
+
+def calc_degrees(command, degree):
+    result = float
+    rad = (degree*math.pi)/180
+    if command == 1:
+        result = math.sin(rad)
+    elif command == 2:
+        result = math.cos(rad)
+    elif command == 3:
+        result = math.tan(rad)
+    else:
+        pass
+    return result
+
+def main():
+
+    print("Введите номер команды от 1 до 3 (1 - sin, 2 - cos, 3 - tan) ")
+    command = int(input())
+    print("Введите угол в градусах: ")
+    degree = int(input())
+    print("Ответ: ")
+    answer = calc_degrees(command, degree)
+    print(round(answer, 2))
+if __name__ == "__main__":
+    main()
