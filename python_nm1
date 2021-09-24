@@ -19,7 +19,7 @@ class Calculator:
         elif self.operation == "-":
             self.result = self.first_num - self.second_num
         elif self.operation == "/":
-            if self.second_num == 0:
+            while self.second_num == 0:
                 print("Ошибка! Делитель не может быть равен нулю!")
                 print("Введите новое число не равное нулю")
                 self.second_num = int(input())
