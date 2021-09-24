@@ -1,0 +1,35 @@
+class Calculator:
+    def __init__(self):
+        self.first_num = 0
+        self.second_num = 0
+        self.operation = ""
+        self.result = 0
+    def calc_read(self):
+        print("Введите первое число: ")
+        self.first_num = int(input())
+        print("Введите второе число: ")
+        self.second_num = int(input())
+        print("Введите операцию: ")
+        self.operation = str(input())
+    def calc_simple(self):
+        if self.operation == "*":
+            self.result = self.first_num * self.second_num
+        elif self.operation == "+":
+            self.result = self.first_num + self.second_num
+        elif self.operation == "-":
+            self.result = self.first_num - self.second_num
+        elif self.operation == "/":
+            if self.second_num == 0:
+                print("Ошибка! Делитель не может быть равен нулю!")
+                print("Введите новое число не равное нулю")
+                self.second_num = int(input())
+            self.result = self.first_num / self.second_num
+
+    def calc_print(self):
+        print(self.result)
+
+
+calca = Calculator()
+calca.calc_read()
+calca.calc_simple()
+calca.calc_print()
