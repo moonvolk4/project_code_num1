@@ -20,6 +20,6 @@ while status == True:
     answer = {}
     for el in range(len(arr)):
         x = arr[el]
-        answer[x] = abs((x**3)-5*x+3)
+        answer[x] = abs(eval(f))
 
     print(min(answer, key=answer.get))
