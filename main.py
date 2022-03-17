@@ -13,7 +13,7 @@ while status == True:
         print(f"x e [{a};{b}]")
     else:
         print(f"x !e [{a};{b}]")
-        status = False
+        break
     arr = []
     for i in np.arange(a, b, 0.1):
         arr.append(round(i, 2))
