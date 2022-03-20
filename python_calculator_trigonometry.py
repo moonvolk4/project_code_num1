@@ -1,33 +1,36 @@
 import math
 
-
 class Calculator:
     def __init__(self):
-        self.command = ""
         self.result = 0
         self.degree = 0
-    def calc_read(self):
-        print("Введите номер команды от 1 до 3 (1 - sin, 2 - cos, 3 - tan, 4 - ctg) ")
-        self.command = int(input())
-        print("Введите угол в градусах: ")
-        self.degree = int(input())
-    def calc_print(self):
-        print("Ответ: ")
-        print(round(self.result, 2))
-    def calc_degrees(self):
-        rad = (self.degree * math.pi) / 180
-        if self.command == 1:
-            self.result = math.sin(rad)
-        elif self.command == 2:
-            self.result = math.cos(rad)
-        elif self.command == 3:
-            self.result = math.tan(rad)
-        elif self.command == 4:
-            self.result = math.cos(rad) / math.sin(rad)
-        else:
-            pass
+        self.commands = {
+            "sin" : self.sin_solver(),
+            "cos" : self.cos_solver(),
+            "tan" : self.tan_solver(),
+        }
 
-calca = Calculator()
-calca.calc_read()
-calca.calc_degrees()
-calca.calc_print()
+    def calc_read(self):
+        self.degree = int(input("Введите угол в градусах: "))
+        command = input("Введите функцию: ")
+        self.commands[command]
+
+    def calc_print(self):
+        print(f"Ответ: {round(self.result, 2)}")
+
+    def sin_solver(self):
+        rad = (self.degree * math.pi) / 180
+        self.result = math.sin(rad)
+
+    def cos_solver(self):
+        rad = (self.degree * math.pi) / 180
+        self.result = math.cos(rad)
+
+    def tan_solver(self):
+        rad = (self.degree * math.pi) / 180
+        self.result = math.tan(rad)
+
+
+calc = Calculator()
+calc.calc_read()
+calc.calc_print()
