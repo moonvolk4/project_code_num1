@@ -1,6 +1,5 @@
 import numpy as np
-status = True
-while status == True:
+while True:
     a = float(input("Введите начало интервала:"))
     b = float(input("Введите конец интервала:"))
     f = input("Введите уравнение:")
@@ -9,10 +8,10 @@ while status == True:
     print(f"Левый конец отрезка: {f1}")
     print(f"Правый конец отрезка: {f2}")
     print("Проверка...")
-    if f1 < 0 and f2 > 0:
+    if (f1 < 0 and f2 > 0) or (f1 > 0 and f2 < 0):
         print(f"x e [{a};{b}]")
     else:
-        print(f"x !e [{a};{b}]")
+        print(f"x не принадлежит [{a};{b}]")
         break
     arr = []
     for i in np.arange(a, b, 0.1):
@@ -23,3 +22,4 @@ while status == True:
         answer[x] = abs(eval(f))
 
     print(min(answer, key=answer.get))
+    break
